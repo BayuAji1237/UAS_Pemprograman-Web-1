@@ -1,0 +1,213 @@
+/*
+ * donasi.css
+ * Style KHUSUS untuk halaman donasi
+ */
+
+/* Beri jarak dari navbar sticky di atas */
+.donasi-page {
+    padding-top: 100px;
+    padding-bottom: 60px;
+    background-color: #f8f9fa; /* Latar belakang halaman */
+}
+
+/* Kotak putih utama untuk form */
+.donasi-form-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.donasi-form-container h2 {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.donasi-form-container .subtitle {
+    text-align: left;
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.donasi-form-container h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-top: 25px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Opsi Tombol Nominal */
+.nominal-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.nominal-btn {
+    width: 100%;
+    background-color: #f0f8ff; /* Warna netral */
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    font-weight: 700;
+}
+
+.nominal-btn:hover {
+    background-color: #dbeeff;
+    transform: translateY(-2px);
+}
+
+/* Style saat tombol nominal diklik */
+.nominal-btn.active {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* Input Nominal Custom */
+.label-custom {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #555;
+}
+
+.custom-amount-wrapper {
+    display: flex;
+    align-items: center;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.custom-amount-wrapper span {
+    padding: 12px 15px;
+    background-color: #eee;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.custom-amount-wrapper input {
+    border: none;
+    padding: 12px;
+    font-size: 1.1rem;
+    width: 100%;
+    outline: none;
+}
+
+.custom-amount-wrapper input:focus {
+    box-shadow: 0 0 0 2px var(--primary-color) inset;
+}
+
+/* Opsi Metode Pembayaran */
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.payment-method {
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.payment-method:hover {
+    border-color: var(--secondary-color);
+}
+
+.payment-method input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+.payment-method label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+}
+
+.payment-method label i {
+    margin-right: 8px;
+    color: var(--primary-color);
+}
+
+/* Style saat radio button dipilih */
+.payment-method input[type="radio"]:checked + label {
+    color: var(--primary-color);
+}
+
+.payment-method:has(input[type="radio"]:checked) {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 90, 156, 0.3);
+}
+
+/* Form Data Diri */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-group input {
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Ceklis Anonim */
+.anonim-check {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.anonim-check input {
+    margin-right: 10px;
+    transform: scale(1.1);
+}
+
+.anonim-check label {
+    font-size: 0.9rem;
+    color: #555;
+    cursor: pointer;
+}
+
+/* Tombol Submit */
+.btn-submit {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 15px;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .donasi-form-container {
+        padding: 20px;
+    }
+
+    .nominal-options {
+        /* Tetap 2 kolom agar tidak terlalu panjang */
+        grid-template-columns: 1fr 1fr;
+    }
+}

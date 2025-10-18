@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galang Dana Al-Khoziny - Kelompok 6</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <button id="toTopBtn" title="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">×</span>
+            <h2>Login Relawan</h2>
+            <form id="login-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <header class="navbar sticky">
+        <div class="container">
+            <a href="#home" class="logo">Solidaritas Al-Khoziny</a>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#kabar">Kabar</a></li> 
+                    <li><a href="#contact">Kontak</a></li>
+                    <li><a href="#anggota">Tim Kami</a></li>
+                </ul>
+            </nav>
+            <button id="loginBtn" class="btn btn-primary">Login</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="carousel-container">
+            <div class="carousel-slide fade">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdhE830yu6zUVgSvtmXORlHlN5zm3S4hiaLA&s" alt="Solidaritas">
+                <div class="carousel-text">
+                    <h2>Bantu Pulihkan Duka Al-Khoziny</h2>
+                    <p>Uluran tangan Anda adalah harapan baru bagi para penyintas dan keluarga korban.</p>
+                    <a href="#donasi" class="btn btn-primary">Donasi Sekarang</a>
+                </div>
+            </div>
+            <div class="carousel-slide fade">
+                <img src="https://mmc.kalteng.go.id/files/berita/05082023085845_1.jpeg" alt="Bantuan Logistik">
+                <div class="carousel-text">
+                    <h2>Dukungan Sosial & Penyembuhan Jiwa</h2>
+                    <p>Kami menyalurkan bantuan sosial dan layanan pemulihan trauma bagi yang terdampak.</p>
+                    <a href="donasi.html" class="btn btn-primary">Donasi Sekarang</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="donasi" class="container section-padding">
+            <h2>Progress Galang Dana</h2>
+            <div class="donation-progress">
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <div class="donation-stats">
+                    <div class="stat-item">
+                        <h3>Dana Terkumpul</h3>
+                        <p class="counter" data-target="78500000">Rp 0</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>Target Dana</h3>
+                        <p>Rp 150.000.000</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>Donatur</h3>
+                        <p class="counter" data-target="1240">0</p>
+                    </div>
+                </div>
+                <a href="donasi.html" class="btn btn-primary btn-large">Beri Donasi Terbaikmu</a>
+            </div>
+        </section>
+
+        <section id="about" class="container section-padding bg-light">
+            <h2>Tentang Gerakan Ini</h2>
+            <p>Kami adalah Kelompok 6 yang tergerak untuk menginisiasi galang dana bagi para korban dan keluarga terdampak tragedi di Al-Khoziny. Fokus kami adalah penyaluran bantuan logistik darurat, santunan duka, serta dukungan pemulihan psikologis (trauma healing). Semua donasi akan disalurkan secara transparan dan akuntabel.</p>
+        </section>
+
+        <section id="kabar" class="container section-padding">
+            <h2>Kabar Terbaru Penyaluran Dana</h2>
+            <div class="blog-container">
+                <article class="blog-post">
+                    <img src="https://kabsidoarjo.baznas.go.id/_next/image?url=https%3A%2F%2Fbucket-api.baznas.go.id%2Fbucket-api%2Ffile%3Fbucket%3Dbzn-fdr-smb-p5739641%26file%3Dattachments%2Fberita%2F1759224349494752477_512-8TaUlfaw%2Cjpg&w=1920&q=75" alt="Penyaluran Bantuan">
+                    <h3>Penyaluran Bantuan Logistik Tahap Awal</h3>
+                    <p>Tim relawan kami telah tiba di lokasi dan menyalurkan bantuan berupa makanan, selimut, dan obat-obatan...</p>
+                    <a href="#">Baca Selengkapnya</a>
+                </article>
+                <article class="blog-post">
+                    <img src="https://tagar.co/wp-content/uploads/2025/10/Screenshot_20251006_194439_com.whatsapp_edit_2063427309648056.jpg" alt="Posko Dukungan">
+                    <h3>Pendirian Posko Dukungan Psikologis</h3>
+                    <p>Bekerja sama dengan psikolog, kami membuka posko 'trauma healing' untuk anak-anak dan keluarga...</p>
+                    <a href="#">Baca Selengkapnya</a>
+                </article>
+                <article class="blog-post">
+                    <img src="donasi.png" alt="Data Donasi">
+                    <h3>Laporan Transparansi Dana (Minggu 1)</h3>
+                    <p>Berikut adalah rincian penerimaan dan penggunaan dana donasi yang telah terkumpul hingga minggu pertama...</p>
+                    <a href="#">Baca Selengkapnya</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="container section-padding bg-light">
+            <h2>Posko Informasi & Kontak</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Hubungi Kami</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Alamat Posko: Buduran, Kabupaten Sidoarjo, Jawa Timur
+ </p>
+                    <p><i class="fas fa-envelope"></i> Email: kelmpok6@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> Hotline: (021) 987-6543</p>
+                </div>
+                <div class="map-embed">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.2985045074784!2d112.71948297499698!3d-7.316097492701017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fbe4e7a89c67%3A0xa680e912a28e1f94!2sMusholla%20Al%20Khoziny!5e0!3m2!1sid!2sid!4v1739837461234!5m2!1sid!2sid"
+                        width="600" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="anggota" class="container section-padding">
+            <h2>Tim Kami (Kelompok 6)</h2>
+            <div class="anggota-container">
+                <div class="anggota-card">
+                    <img src="yasmin.jpg" alt="Foto Yasmin">
+                    <h3>Yasmin</h3>
+                    <p>Koordinator Lapangan</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/amanggator?igsh=MXdqYTIyZGJ4cnU3MQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+                         <a href="https://wa.me/6285742963775" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+
+                    </div>
+                </div>
+                <div class="anggota-card">
+                    <img src="azizah.jpg" alt="Foto Azizah">
+                    <h3>Azizah</h3>
+                    <p>Manajemen Logistik</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/azzhh_14?igsh=MTVqc3NrZWhwMGgydg==" target="_blank"><i class="fab fa-instagram"></i></a>
+                         <a href="https://wa.me/6285803657469" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+
+                    </div>
+                </div>
+                <div class="anggota-card">
+                    <img src="bayu.jpg" alt="Foto Bayu">
+                    <h3>Bayu</h3>
+                    <p>Humas & Publikasi</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/bayu.__aji?igsh=MWp1NXJvOHhpeXF4cQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/6289530819776" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+
+                    </div>
+                </div>
+                <div class="anggota-card">
+                    <img src="Bopi.jpg" alt="Foto Mushofi">
+                    <h3>Mushofi</h3>
+                    <p>Keuangan & Transparansi</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/bop_aiyy?igsh=ZWN1NWR1Z25rdWJi" target="_blank"><i class="fab fa-instagram"></i></a>
+                         <a href="https://wa.me/6281325366455" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+
+                    </div>
+                </div>
+                <div class="anggota-card">
+                    <img src="Farhad.jpg" alt="Foto Farhad">
+                    <h3>Farhad</h3>
+                    <p>Dokumentasi & Laporan</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/farhad_dhrd?igsh=b241eTRzb295NnRr" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/6287776539929" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Kelompok 6 - Solidaritas untuk Al-Khoziny</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Donasi - Al-Khoziny</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="donasi.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <button id="toTopBtn" title="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <header class="navbar sticky">
+        <div class="container">
+            <a href="index.html" class="logo">Solidaritas Al-Khoziny</a>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li> 
+                    <li><a href="index.html#about">Tentang Kami</a></li>
+                    <li><a href="index.html#kabar">Kabar</a></li> 
+                    <li><a href="index.html#contact">Kontak</a></li>
+                    <li><a href="index.html#anggota">Tim Kami</a></li>
+                </ul>
+            </nav>
+            <button id="loginBtn" class="btn btn-primary">Login</button>
+        </div>
+    </header>
+
+    <main class="donasi-page">
+        <div class="container">
+            <div class="donasi-form-container">
+                <h2>Formulir Donasi</h2>
+                <p class="subtitle">Bantu pulihkan duka Al-Khoziny. Setiap rupiah sangat berarti.</p>
+                
+                <form id="donationForm">
+                    
+                    <h3>1. Pilih Nominal Donasi</h3>
+                    <div class="nominal-options">
+                        <button type="button" class="btn nominal-btn" data-amount="25000">Rp 25.000</button>
+                        <button type="button" class="btn nominal-btn" data-amount="50000">Rp 50.000</button>
+                        <button type="button" class="btn nominal-btn" data-amount="100000">Rp 100.000</button>
+                        <button type="button" class="btn nominal-btn" data-amount="250000">Rp 250.000</button>
+                    </div>
+                    <label for="customAmount" class="label-custom">Atau Masukkan Nominal Lain</label>
+                    <div class="custom-amount-wrapper">
+                        <span>Rp</span>
+                        <input type="number" id="customAmount" placeholder="Contoh: 500000" min="10000" required>
+                    </div>
+
+                    <h3>2. Pilih Metode Pembayaran</h3>
+                    <div class="payment-options">
+                        <div class="payment-method">
+                            <input type="radio" id="bank_transfer" name="payment" value="bank" checked>
+                            <label for="bank_transfer">
+                                <i class="fas fa-university"></i> Bank Transfer (Virtual Account)
+                            </label>
+                        </div>
+                        <div class="payment-method">
+                            <input type="radio" id="e_wallet" name="payment" value="ewallet">
+                            <label for="e_wallet">
+                                <i class="fas fa-wallet"></i> E-Wallet (GoPay, OVO, Dana)
+                            </label>
+                        </div>
+                        <div class="payment-method">
+                            <input type="radio" id="credit_card" name="payment" value="cc">
+                            <label for="credit_card">
+                                <i class="fas fa-credit-card"></i> Kartu Kredit/Debit
+                            </label>
+                        </div>
+                    </div>
+
+                    <h3>3. Lengkapi Data Diri</h3>
+                    <div class="form-group">
+                        <label for="donorName">Nama Lengkap</label>
+                        <input type="text" id="donorName" placeholder="Masukkan nama Anda" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="donorEmail">Alamat Email</label>
+                        <input type="email" id="donorEmail" placeholder="Untuk laporan donasi (opsional)">
+                    </div>
+                    <div class="anonim-check">
+                        <input type="checkbox" id="anonim">
+                        <label for="anonim">Sembunyikan nama saya (Donasi sebagai Hamba Allah)</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large btn-submit">
+                        Lanjutkan Pembayaran
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Kelompok 6 - Solidaritas untuk Al-Khoziny</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const nominalButtons = document.querySelectorAll(".nominal-btn");
+            const customAmountInput = document.getElementById("customAmount");
+
+            nominalButtons.forEach(button => {
+                button.addEventListener("click", function() {
+                    // Ambil nilai dari atribut data-amount
+                    const amount = this.getAttribute("data-amount");
+                    // Masukkan nilai ke input custom
+                    customAmountInput.value = amount;
+
+                    // (Opsional) Hapus 'active' dari tombol lain dan tambahkan ke yang ini
+                    nominalButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Jika pengguna mengetik manual, hilangkan 'active' dari tombol
+            customAmountInput.addEventListener('input', function() {
+                nominalButtons.forEach(btn => btn.classList.remove('active'));
+            });
+
+            // Handle submit form (saat ini hanya menampilkan alert)
+            const donationForm = document.getElementById("donationForm");
+            donationForm.addEventListener("submit", function(e) {
+                e.preventDefault(); // Mencegah form terkirim
+                const amount = customAmountInput.value;
+                if (amount < 10000) {
+                    alert("Minimal donasi adalah Rp 10.000");
+                    return;
+                }
+                alert("Terima kasih! \nAnda akan diarahkan ke halaman pembayaran untuk donasi sebesar Rp" + 
+                      parseInt(amount).toLocaleString('id-ID'));
+                // Di proyek nyata, di sini Anda akan memanggil payment gateway
+            });
+        });
+    </script>
+</body>
+</html>
