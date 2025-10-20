@@ -285,9 +285,6 @@ footer { background: var(--dark-gray); color: white; text-align: center; padding
     .blog-post { flex-basis: 100%; }
     .anggota-card { width: 100%; } 
    
-    .testimonial-container {
-    grid-template-columns: 1fr; 
-}
 }
 
 .btn-danger {
@@ -308,6 +305,7 @@ footer { background: var(--dark-gray); color: white; text-align: center; padding
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    grid-template-columns: 1fr; 
 }
 
 .testimonial-card {
