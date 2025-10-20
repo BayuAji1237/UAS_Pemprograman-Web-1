@@ -1,5 +1,6 @@
-
 document.addEventListener("DOMContentLoaded", function() {
+
+
     (function() {
         try {
             const loginBtnNav = document.getElementById('loginBtn');
@@ -15,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
             let loggedInUser = sessionStorage.getItem('loggedInUser');
 
             if (loggedInUser) {
+
                 loginBtnNav.innerText = 'Logout (' + loggedInUser + ')';
                 loginBtnNav.classList.remove('btn-primary');
                 loginBtnNav.classList.add('btn-danger');
@@ -26,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     window.location.reload();
                 };
             } else {
+
                 loginBtnNav.innerText = 'Login';
                 loginBtnNav.classList.remove('btn-danger');
                 loginBtnNav.classList.add('btn-primary');
@@ -33,13 +36,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 loginBtnNav.onclick = function(e) {
                     e.preventDefault(); 
                     if (modal) {
-                        modal.style.display = "block"; 
+                        modal.style.display = "block";
                     } else {
                         alert("Silakan kembali ke halaman Home untuk login.");
                         window.location.href = 'index.html';
                     }
                 };
             }
+
 
             if (modal && loginForm && closeBtn) {
                 
@@ -63,8 +67,8 @@ document.addEventListener("DOMContentLoaded", function() {
                         return;
                     }
                     sessionStorage.setItem('loggedInUser', username);
-                    alert(`Selamat datang, ${username}! Anda berhasil login.`);
-                    window.location.reload();
+                    alert('Selamat datang, ' + username + '! Anda berhasil login.');
+                    window.location.reload(); 
                 });
             }
 
@@ -73,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     })(); 
 
-    
+
     (function() {
         try {
             const carouselSlides = document.getElementsByClassName("carousel-slide");
@@ -94,10 +98,9 @@ document.addEventListener("DOMContentLoaded", function() {
         } catch (e) {
             console.error("Error di Kapsul Carousel:", e);
         }
-    })(); 
+    })();
 
 
-    
     (function() {
         try {
             const toTopBtn = document.getElementById("toTopBtn");
@@ -105,6 +108,7 @@ document.addEventListener("DOMContentLoaded", function() {
             let hasAnimated = false;
 
             window.onscroll = function() {
+
                 if (toTopBtn) {
                     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                         toTopBtn.style.display = "block";
@@ -113,6 +117,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                 }
                 
+
                 if (progressSection && !hasAnimated) {
                     const rect = progressSection.getBoundingClientRect();
                     if (rect.top <= window.innerHeight && rect.bottom >= 0) {
@@ -129,15 +134,50 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             }
 
+
             function animateProgress() {
+       
                 const progressBar = document.getElementById("progressBar");
-                if (!progressBar) return;
-                const terkumpul = 78500000;
-                const target = 150000000;
-                const percentage = (terkumpul / target) * 100;
-                progressBar.style.width = percentage + '%';
+                if (progressBar) {
+                    const terkumpul = 78500000;
+                    const target = 150000000;
+                    const percentage = (terkumpul / target) * 100;
+                    progressBar.style.width = percentage + '%';
+                }
+                
+
+                const counters = document.querySelectorAll('.counter');
+                const speed = 200;
+
+                counters.forEach(counter => {
+                    const updateCount = () => {
+                        const targetVal = +counter.getAttribute('data-target');
+                        const count = +counter.innerText.replace(/[^0-9]/g, ''); 
+                        const inc = targetVal / speed; 
+
+                        if (count < targetVal) {
+                            let newCount = Math.ceil(count + inc);
+                            if (newCount > targetVal) newCount = targetVal; 
+                            
+                            if (counter.getAttribute('data-target') === "78500000") {
+                                counter.innerText = 'Rp ' + newCount.toLocaleString('id-ID');
+                            } else {
+                                counter.innerText = newCount.toLocaleString('id-ID');
+                            }
+                            
+                            setTimeout(updateCount, 10);
+                        } else {
+                            if (counter.getAttribute('data-target') === "78500000") {
+                                counter.innerText = 'Rp ' + targetVal.toLocaleString('id-ID');
+                            } else {
+                                counter.innerText = targetVal.toLocaleString('id-ID');
+                            }
+                        }
+                    };
+                    updateCount();
+                });
             }
-            
+
             if (window.onscroll) {
                 window.onscroll();
             }
@@ -145,10 +185,9 @@ document.addEventListener("DOMContentLoaded", function() {
         } catch (e) {
             console.error("Error di Kapsul On-Scroll:", e);
         }
-    })(); 
+    })();
 
 
-  
     (function() {
         try {
             const menuToggle = document.getElementById('menuToggle');
@@ -179,7 +218,6 @@ document.addEventListener("DOMContentLoaded", function() {
     })(); 
     
     
-
     (function() {
         try {
             const donationForm = document.getElementById("donationForm");
