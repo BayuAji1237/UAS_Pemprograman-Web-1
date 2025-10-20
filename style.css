@@ -287,11 +287,26 @@ footer { background: var(--dark-gray); color: white; text-align: center; padding
 
     .anggota-card { width: 100%; } 
 
-     .testimonial-container {
+    .testimonial-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: 20px; 
+    display:block;
+
     }
+
+    .testimonial-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    position: relative;
+    border-top: 4px solid var(--primary-color);
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    }
+    
 }
 
     .btn-danger {
@@ -307,25 +322,6 @@ footer { background: var(--dark-gray); color: white; text-align: center; padding
     .bg-light { 
     background-color: var(--accent-color, #f8f9fa); 
     }
-
-    .testimonial-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px; 
-    }
-
-
-    .testimonial-card {
-    background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    position: relative;
-    border-top: 4px solid var(--primary-color);
-    display:flex;
-    flex-direction: column;
-    }
-
 
     .testimonial-card .quote-icon {
     font-size: 2.5rem;
