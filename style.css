@@ -278,11 +278,21 @@ footer { background: var(--dark-gray); color: white; text-align: center; padding
         bottom: 50px;
     }
     .carousel-text h2 { font-size: 2rem; }
+    
     .carousel-text p { font-size: 1rem; }
 
     .blog-container, .contact-wrapper { flex-direction: column; }
+
     .blog-post { flex-basis: 100%; }
+
     .anggota-card { width: 100%; } 
+
+     .testimonial-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; 
+    }
+}
 
     .btn-danger {
     background-color: #dc3545; 
@@ -301,9 +311,9 @@ footer { background: var(--dark-gray); color: white; text-align: center; padding
     .testimonial-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    grid-template-columns: 1fr; 
+    gap: 20px; 
     }
+
 
     .testimonial-card {
     background: #fff;
@@ -339,6 +349,7 @@ footer { background: var(--dark-gray); color: white; text-align: center; padding
     word-wrap: break-word;
     }
 
+
     .author-info {
     display: flex;
     align-items: center;
@@ -359,4 +370,3 @@ footer { background: var(--dark-gray); color: white; text-align: center; padding
     color: var(--dark-gray);
     font-style: normal; 
     }
-}
