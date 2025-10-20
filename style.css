@@ -113,7 +113,7 @@ h2 {
 .modal-content form input { padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; }
 .modal-content form button { margin-top: 20px; }
 
-/* 3. Carousel */
+
 .carousel-container { max-width: 100%; position: relative; margin: auto; overflow: hidden; height: 500px; }
 .carousel-slide { display: none; height: 100%; }
 .carousel-slide img {
@@ -128,7 +128,6 @@ h2 {
 .fade { animation-name: fade; animation-duration: 1.5s; }
 @keyframes fade { from {opacity: .4} to {opacity: 1} }
 
-/* 4. Progress Donasi (BARU & INTERAKTIF) */
 .donation-progress {
     text-align: center;
     background: #fff;
@@ -284,31 +283,29 @@ footer { background: var(--dark-gray); color: white; text-align: center; padding
     .blog-container, .contact-wrapper { flex-direction: column; }
     .blog-post { flex-basis: 100%; }
     .anggota-card { width: 100%; } 
-   
-}
 
-.btn-danger {
+    .btn-danger {
     background-color: #dc3545; 
     border-color: #dc3545;
-}
+    }
 
-.btn-danger:hover {
+    .btn-danger:hover {
     background-color: #c82333;
     border-color: #bd2130;
-}
+    }
 
-.bg-light { 
+    .bg-light { 
     background-color: var(--accent-color, #f8f9fa); 
-}
+    }
 
-.testimonial-container {
+    .testimonial-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     grid-template-columns: 1fr; 
-}
+    }
 
-.testimonial-card {
+    .testimonial-card {
     background: #fff;
     padding: 30px;
     border-radius: 8px;
@@ -317,19 +314,19 @@ footer { background: var(--dark-gray); color: white; text-align: center; padding
     border-top: 4px solid var(--primary-color);
     display:flex;
     flex-direction: column;
-}
+    }
 
 
-.testimonial-card .quote-icon {
+    .testimonial-card .quote-icon {
     font-size: 2.5rem;
     color: var(--primary-color);
     opacity: 0.2;
     position: absolute;
     top: 15px;
     left: 20px;
-}
+    }
 
-.testimonial-card .comment {
+    .testimonial-card .comment {
     font-size: 1rem;
     font-style: italic;
     color: #555;
@@ -340,25 +337,26 @@ footer { background: var(--dark-gray); color: white; text-align: center; padding
     flex-grow: 1;
     overflow-wrap: break-word;
     word-wrap: break-word;
-}
+    }
 
-.author-info {
+    .author-info {
     display: flex;
     align-items: center;
     gap: 15px;
     margin-top: 15px;
-}
+    }
 
-.author-info img {
+    .author-info img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #eee;;
-}
+    }
 
-.author-info cite {
+    .author-info cite {
     font-weight: 600;
     color: var(--dark-gray);
     font-style: normal; 
+    }
 }
